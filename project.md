@@ -1,4 +1,4 @@
-# AlphaMind AI — Intelligent Crypto Market Analysis & Decision Engine
+# AuraMind AI — Intelligent Crypto Market Analysis & Decision Engine
 
 **Alternative names:** SignalForge AI · QuantPulse · WhaleScope · NeuralTrade · TradeOracle AI
 
@@ -49,7 +49,7 @@ There is no unified AI platform that:
 
 ## Solution
 
-AlphaMind AI solves this by building an **"AI Market Intelligence Layer"**.
+AuraMind AI solves this by building an **"AI Market Intelligence Layer"**.
 
 The platform continuously:
 - ingests live market data,
