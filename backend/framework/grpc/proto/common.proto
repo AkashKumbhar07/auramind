@@ -2,10 +2,9 @@ syntax = "proto3";
 
 package auramind.common;
 
-option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/common";
+option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/common;common";
 
 import "google/protobuf/any.proto";
-import "google/protobuf/timestamp.proto";
 
 message ApiResponse {
   bool success = 1;

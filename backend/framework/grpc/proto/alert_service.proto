@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auramind.alerts;
 
-option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/alerts";
+option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/alerts;alerts";
 
 import "common.proto";
 import "google/protobuf/timestamp.proto";

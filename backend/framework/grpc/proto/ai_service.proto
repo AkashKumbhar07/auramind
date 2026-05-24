@@ -2,9 +2,8 @@ syntax = "proto3";
 
 package auramind.ai;
 
-option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/ai";
+option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/ai;ai";
 
-import "common.proto";
 import "market_service.proto";
 
 service AIService {

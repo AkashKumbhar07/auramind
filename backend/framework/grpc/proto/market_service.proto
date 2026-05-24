@@ -2,10 +2,7 @@ syntax = "proto3";
 
 package auramind.market;
 
-option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/market";
-
-import "google/protobuf/timestamp.proto";
-import "common.proto";
+option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/market;market";
 
 service MarketService {
   rpc GetPairs(GetPairsRequest) returns (GetPairsResponse);
