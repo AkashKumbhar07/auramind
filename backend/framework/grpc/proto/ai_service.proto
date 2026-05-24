@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package auramind.ai;
+
+option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/ai";
+
+import "common.proto";
+import "market_service.proto";
+
+service AIService {
+  rpc AnalyzeMarket(AnalyzeMarketRequest) returns (AnalyzeMarketResponse);
+  rpc GetSentiment(SentimentRequest) returns (SentimentResponse);
+  rpc Chat(ChatRequest) returns (ChatResponse);
+}
+
+message AnalyzeMarketRequest {
+  string symbol = 1;
+  repeated market.Candle candles = 2;
+}
+
+message AnalysisResult {
+  string symbol = 1;
+  double bullish_probability = 2;
+  double confidence_score = 3;
+  string risk_level = 4;
+  double suggested_stop_loss = 5;
+  repeated string reasons = 6;
+  string invalidation_condition = 7;
+}
+
+message AnalyzeMarketResponse {
+  AnalysisResult result = 1;
+}
+
+message SentimentRequest {
+  string symbol = 1;
+}
+
+message SentimentResponse {
+  string symbol = 1;
+  double sentiment_score = 2;
+  string fear_greed_index = 3;
+  repeated string sources = 4;
+}
+
+message ChatRequest {
+  string message = 1;
+  string context = 2;
+}
+
+message ChatResponse {
+  string response = 1;
+  repeated string sources = 2;
+}

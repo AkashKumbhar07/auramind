@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package auramind.common;
+
+option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/common";
+
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+message ApiResponse {
+  bool success = 1;
+  string message = 2;
+  google.protobuf.Any data = 3;
+  int32 error_code = 4;
+}
+
+message PaginationRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+
+message PaginationResponse {
+  int32 page = 1;
+  int32 page_size = 2;
+  int32 total_items = 3;
+  int32 total_pages = 4;
+}
+
+message Empty {}
+
+message IDRequest {
+  string id = 1;
+}

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package auramind.alerts;
+
+option go_package = "github.com/AkashKumbhar07/auramind/backend/framework/grpc/generated/alerts";
+
+import "common.proto";
+import "google/protobuf/timestamp.proto";
+
+service AlertService {
+  rpc CreateAlert(CreateAlertRequest) returns (AlertResponse);
+  rpc GetAlert(common.IDRequest) returns (AlertResponse);
+  rpc ListAlerts(ListAlertsRequest) returns (ListAlertsResponse);
+  rpc DeleteAlert(common.IDRequest) returns (common.ApiResponse);
+  rpc StreamAlerts(common.Empty) returns (stream AlertEvent);
+}
+
+message Alert {
+  string id = 1;
+  string user_id = 2;
+  string symbol = 3;
+  string condition = 4;
+  double value = 5;
+  bool active = 6;
+  google.protobuf.Timestamp created_at = 7;
+}
+
+message CreateAlertRequest {
+  string user_id = 1;
+  string symbol = 2;
+  string condition = 3;
+  double value = 4;
+}
+
+message AlertResponse {
+  Alert alert = 1;
+}
+
+message ListAlertsRequest {
+  string user_id = 1;
+  bool active_only = 2;
+}
+
+message ListAlertsResponse {
+  repeated Alert alerts = 1;
+}
+
+message AlertEvent {
+  string alert_id = 1;
+  string symbol = 2;
+  string message = 3;
+  double current_value = 4;
+}
